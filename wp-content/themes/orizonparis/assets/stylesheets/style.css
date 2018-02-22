@@ -8889,6 +8889,12 @@ body {
   width: 20px;
 }
 
+/* line 37, ../sass/theme/_commons.scss */
+input:focus, input:hover, button:focus, button:hover, a:focus, a:hover {
+  outline: none;
+  text-decoration: none;
+}
+
 /* line 1, ../sass/theme/_header.scss */
 .header {
   position: fixed;
@@ -8906,34 +8912,35 @@ body {
 .header:after {
   clear: both;
 }
-/* line 8, ../sass/theme/_header.scss */
-.header .logo {
+/* line 9, ../sass/theme/_header.scss */
+.header .navigation {
+  float: right;
+  padding: 45px;
+  font-weight: 100;
+  font-size: 11px;
+}
+
+/* line 16, ../sass/theme/_header.scss */
+.logo {
   text-transform: uppercase;
   display: inline-block;
   text-align: center;
   padding: 45px;
   float: left;
 }
-/* line 15, ../sass/theme/_header.scss */
-.header .logo .logo-title {
+/* line 23, ../sass/theme/_header.scss */
+.logo .logo-title {
   font-weight: 500;
   letter-spacing: .33em;
   font-size: 18px;
 }
-/* line 20, ../sass/theme/_header.scss */
-.header .logo .sub-title {
+/* line 28, ../sass/theme/_header.scss */
+.logo .sub-title {
   font-size: 6px;
   margin-top: 7px;
   opacity: .8;
   font-weight: 100;
   letter-spacing: .3em;
-}
-/* line 29, ../sass/theme/_header.scss */
-.header .navigation {
-  float: right;
-  padding: 45px;
-  font-weight: 100;
-  font-size: 11px;
 }
 
 /* line 1, ../sass/pages/_home.scss */
@@ -9058,4 +9065,160 @@ body {
   z-index: 100;
   pointer-events: none;
   opacity: .1;
+}
+
+/* line 2, ../sass/pages/_coming-soon.scss */
+.container-coming-soon video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  opacity: .3;
+}
+
+/* line 16, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon {
+  text-align: center;
+}
+/* line 18, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .logo {
+  float: none;
+}
+/* line 21, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .header {
+  display: none;
+}
+/* line 25, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .content-comming-soon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  width: 100%;
+}
+/* line 31, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .content-comming-soon .logo {
+  padding-top: 0;
+}
+/* line 33, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .content-comming-soon .logo .logo-title {
+  font-size: 30px;
+}
+/* line 36, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .content-comming-soon .logo .sub-title {
+  font-size: 10px;
+}
+/* line 41, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .content-comming-soon .newsletter {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+/* line 47, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .content-comming-soon .newsletter .intro {
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+/* line 53, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .content-comming-soon .newsletter .intro strong {
+  display: block;
+  color: #FFF;
+  font-weight: 600;
+  font-style: italic;
+}
+/* line 61, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .content-comming-soon .newsletter input[type="email"] {
+  width: calc(100% - 120px);
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  font-family: 'effra';
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 15px;
+  font-size: 11px;
+  float: left;
+  box-sizing: border-box;
+  border-right: 0;
+}
+/* line 76, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .content-comming-soon .newsletter input[type="email"].require {
+  border-color: #fff;
+}
+/* line 80, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .content-comming-soon .newsletter button[type="submit"] {
+  width: 120px;
+  float: right;
+  appearance: none;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  background: #FFF;
+  font-family: 'effra';
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  border: 0;
+  padding: 17px 17px 18px;
+  font-size: 11px;
+  color: #222;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+/* line 96, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .content-comming-soon .newsletter button[type="submit"]:hover {
+  background: #111;
+  color: #FFF;
+}
+/* line 104, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .social {
+  margin-top: 90px;
+}
+/* line 106, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .social li {
+  display: inline-block;
+  margin: 0 15px;
+}
+/* line 109, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .social li a {
+  color: #FFF;
+  font-weight: 400;
+  position: relative;
+  display: block;
+  padding-bottom: 6px;
+  overflow: hidden;
+}
+/* line 116, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .social li a:before {
+  content: '';
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  background: #FFF;
+  bottom: 4px;
+  left: 0;
+  -webkit-transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0);
+  -o-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  opacity: .2;
+}
+/* line 130, ../sass/pages/_coming-soon.scss */
+.page-template-coming-soon .social li a:hover:before {
+  -webkit-transform: translate(0%, 0);
+  -ms-transform: translate(0%, 0);
+  -o-transform: translate(0%, 0);
+  transform: translate(0%, 0);
 }

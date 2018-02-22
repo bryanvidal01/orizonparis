@@ -5,31 +5,31 @@
     width: 100%;
     left: 0;
     z-index: 200;
-    .logo{
-        text-transform: uppercase;
-        display: inline-block;
-        text-align: center;
-        padding: 45px;
-        float: left;
-
-        .logo-title{
-            font-weight: 500;
-            letter-spacing: .33em;
-            font-size: 18px;
-        }
-        .sub-title{
-            font-size: 6px;
-            margin-top: 7px;
-            opacity: .8;
-            font-weight: 100;
-            letter-spacing: .3em;
-        }
-    }
 
     .navigation{
         float: right;
         padding: 45px;
         font-weight: 100;
         font-size: 11px;
+    }
+}
+.logo{
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    padding: 45px;
+    float: left;
+
+    .logo-title{
+        font-weight: 500;
+        letter-spacing: .33em;
+        font-size: 18px;
+    }
+    .sub-title{
+        font-size: 6px;
+        margin-top: 7px;
+        opacity: .8;
+        font-weight: 100;
+        letter-spacing: .3em;
     }
 }

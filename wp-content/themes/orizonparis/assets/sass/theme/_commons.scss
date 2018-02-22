@@ -32,3 +32,10 @@ body{
         }
     }
 }
+
+input, button, a{
+    &:focus, &:hover{
+        outline: none;
+        text-decoration: none;
+    }
+}

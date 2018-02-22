@@ -19,3 +19,31 @@ function bbx_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'bbx_enqueue_scripts' );
 
+
+
+// Page option
+
+if( function_exists('acf_add_options_page') ) {
+	// Page principale
+	acf_add_options_page(array(
+		'page_title'    => 'Options',
+		'menu_title'    => 'Options',
+		'menu_slug'     => 'options-generales',
+		'capability'    => 'edit_posts',
+		'redirect'      => true
+	));
+
+}
+
+
+function check_user($post){
+	global $post;
+	$pageID = get_the_id();
+
+	if((!is_user_logged_in()) && (get_field('active_cs', 'option')) && (get_field('page_coming_soon', 'option')) && ($pageID != get_field('page_coming_soon', 'option'))):
+		wp_redirect(get_the_permalink(get_field('page_coming_soon', 'option')));
+		die;
+	endif;
+}
+
+add_action( 'wp', 'check_user' );
