@@ -2,110 +2,42 @@
 <div class="background-home" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/images/lanvin.jpg')"></div>
 
 <div class="container container-project">
-    <div class="row">
-        <div class="push-project visible current" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/images/lanvin.jpg')" data-img="<?php echo get_template_directory_uri() ?>/assets/images/lanvin.jpg">
-            <div class="text-push">
-                <div class="category">
-                    colorz
+    <?php
+        $args = array(
+            'post_type' => 'project',
+            'posts_per_page' => -1,
+            'orderby' => 'date',
+            'order' => 'DESC'
+        );
+        $the_query = new WP_Query( $args );
+
+        if ( $the_query->have_posts() ):
+
+        	while ( $the_query->have_posts() ):
+        		$the_query->the_post();
+                $imgID = get_field('image_projet');
+                $imgUrl = wp_get_attachment_image_src($imgID, '1400x960');
+                ?>
+
+                <div class="row">
+                    <div class="push-project" style="background-image: url('<?php echo $imgUrl[0] ?>')" data-img="<?php echo $imgUrl[0] ?>">
+                        <div class="text-push">
+                            <div class="category">
+                                <?php echo get_field('category'); ?>
+                            </div>
+                            <div class="title">
+                                <?php echo get_the_title(); ?>
+                            </div>
+                            <a href="<?php echo get_the_permalink(); ?>" class="link link-project">
+                                Voir le projet
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="title">
-                    Lanvin
-                </div>
-                <a href="#" class="link">
-                    Voir le projet
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="push-project" style="background-image: url('https://images.pexels.com/photos/610738/pexels-photo-610738.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb')" data-img="https://images.pexels.com/photos/610738/pexels-photo-610738.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb">
-            <div class="text-push">
-                <div class="category">
-                    colorz
-                </div>
-                <div class="title">
-                    Figaret
-                </div>
-                <a href="#" class="link">
-                    Voir le projet
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="push-project" style="background-image: url('https://images.pexels.com/photos/879585/pexels-photo-879585.png?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb')" data-img="https://images.pexels.com/photos/879585/pexels-photo-879585.png?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb">
-            <div class="text-push">
-                <div class="category">
-                    colorz
-                </div>
-                <div class="title">
-                    Eden Park
-                </div>
-                <a href="#" class="link">
-                    Voir le projet
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="push-project" style="background-image: url('https://images.pexels.com/photos/880867/pexels-photo-880867.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb')" data-img="https://images.pexels.com/photos/880867/pexels-photo-880867.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb">
-            <div class="text-push">
-                <div class="category">
-                    colorz
-                </div>
-                <div class="title">
-                    Eden Park
-                </div>
-                <a href="#" class="link">
-                    Voir le projet
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="push-project" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/images/lanvin.jpg')" data-img="<?php echo get_template_directory_uri() ?>/assets/images/lanvin.jpg">
-            <div class="text-push">
-                <div class="category">
-                    colorz
-                </div>
-                <div class="title">
-                    Eden Park
-                </div>
-                <a href="#" class="link">
-                    Voir le projet
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="push-project" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/images/lanvin.jpg')" data-img="<?php echo get_template_directory_uri() ?>/assets/images/lanvin.jpg">
-            <div class="text-push">
-                <div class="category">
-                    colorz
-                </div>
-                <div class="title">
-                    Eden Park
-                </div>
-                <a href="#" class="link">
-                    Voir le projet
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="push-project" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/images/lanvin.jpg')" data-img="<?php echo get_template_directory_uri() ?>/assets/images/lanvin.jpg">
-            <div class="text-push">
-                <div class="category">
-                    colorz
-                </div>
-                <div class="title">
-                    Eden Park
-                </div>
-                <a href="#" class="link">
-                    Voir le projet
-                </a>
-            </div>
-        </div>
-    </div>
+
+        	<?php endwhile;
+        	wp_reset_postdata();
+        endif;
+    ?>
 </div>
 <?php get_footer(); ?>

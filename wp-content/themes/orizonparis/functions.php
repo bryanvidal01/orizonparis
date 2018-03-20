@@ -47,3 +47,24 @@ function check_user($post){
 }
 
 add_action( 'wp', 'check_user' );
+
+
+// POST TYPE
+
+function create_post_type() {
+  register_post_type( 'project',
+    array(
+      'labels' => array(
+        'name' => __( 'Projets' ),
+        'singular_name' => __( 'Projet' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+    )
+  );
+}
+add_action( 'init', 'create_post_type' );
+
+
+// Images Size
+add_image_size( '1400x960', 1400, 960, true );

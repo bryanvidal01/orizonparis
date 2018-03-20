@@ -1,6 +1,20 @@
 jQuery(document).ready(function(){
     animHome();
 
+    animMenu();
+
+    ajaxHome();
+
+    jQuery(window).scroll(function(){
+        // fixedMenu();
+    })
+
+    smoothScroll();
+
+    jQuery(window).scroll(function(){
+        var scroll = jQuery(window).scrollTop();
+        fixedMenu(scroll);
+    });
 
     jQuery(document).on('submit','.newsletter-form', function(e){
         e.preventDefault();
@@ -21,12 +35,16 @@ jQuery(document).ready(function(){
                 },
                 success: function (resp) {
                     if (resp.result == 'error')
-                    msg = 'Désolé, une erreur est survenue.';
-                    else
-                    msg = 'Merci de votre inscription';
+                    msg = 'Sorry, an error has occurred.';
+                    else{
+                        msg = 'Thank you for your registration';
+                    }
 
-                    $form.siblings('.message-error').text(msg);
-                    $form.siblings('.message-error').fadeIn();
+                    setTimeout(function(){
+                        $form.find('.message-error').text(msg);
+                        $form.find('.message-error').fadeIn(500);
+                    }, 100);
+                    $form.find('input, button').fadeOut(100);
                 }
             });
         }else{
@@ -34,4 +52,5 @@ jQuery(document).ready(function(){
         }
     });
 
+    animLoader(false);
 });

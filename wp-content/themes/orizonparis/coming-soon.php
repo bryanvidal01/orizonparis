@@ -28,7 +28,7 @@ get_header();
 
         <form class="newsletter-form newsletter clearfix" action="<?php echo $url; ?>" data-json="<?php echo $url_json; ?>" method="post">
             <div class="intro">
-                <strong>Web site is coming !</strong>Subscribe to the newsletter for be the first informed...
+                <strong>Our web site is coming !</strong>Subscribe to the newsletter for be the first informed...
             </div>
 
             <input type="email" value="" name="EMAIL" placeholder="Votre adresse email">
@@ -40,33 +40,26 @@ get_header();
               <input type="text" name="b_76b2cc337d2ae894c55248c41_9ac6007266" tabindex="-1" value="">
             </div>
 
+            <div class="message-error">
+
+            </div>
+
         </form>
 
 
-        <!-- <form class="newsletter clearfix" action="index.html" method="post">
-            <div class="intro">
-                subscribe to the newsletter
-            </div>
-
-            <input type="text" name="" placeholder="Your email" />
-            <button type="submit" name="">
-                Submit
-            </button>
-        </form> -->
-
         <div class="social">
             <li>
-                <a href="#">
+                <a href="http://facebook.com/orizon.paris/" target="_blank">
                     Facebook
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="https://www.instagram.com/orizon.paris/" target="_blank">
                     Instagram
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="mailto:orizon.paris@gmail.com">
                     Contact
                 </a>
             </li>
